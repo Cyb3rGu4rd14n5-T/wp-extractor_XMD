@@ -38,6 +38,25 @@ Clears old output each time for clean results.
 
 * `/wp-json/wp/v2/users`
 * `/wp-json/wp/v2/posts`
+* Discovers all WordPress API endpoints, including plugins like WooCommerce, Yoast, etc.
+
+Keeps the focus on:
+
+/wp/v2/users → for usernames + emails
+
+/wp/v2/posts → for post titles
+
+Saves:
+
+All API endpoints → endpoints.txt
+
+Emails, usernames, titles → as before
+
+Adds a banner check for figlet
+
+Clean summary that doesn’t confuse users
+
+wp-extractor_XMD scans the /wp-json WordPress REST API and extracts all available endpoints, including plugin-based routes (like WooCommerce, Yoast, JWT-auth). It then pulls usernames, emails, and post titles when accessible — useful for recon, user enumeration, and bug bounty investigation.
 
 These endpoints, when misconfigured or left unrestricted, may unintentionally leak:
 
