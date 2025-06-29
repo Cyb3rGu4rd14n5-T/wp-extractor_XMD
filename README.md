@@ -27,27 +27,43 @@ Automatically sanitizes URLs (even if full paths like /blog/ are given).
 
 Clears old output each time for clean results.
 
-Stylish ASCII banner for branding.
+- 🔍 Auto-detects `/wp-json` even from full paths like `/blog/`
+- 📧 Extracts **usernames**, **emails**, and **post titles**
+- 💾 Saves to `usernames.txt`, `emails.txt`, `post_titles.txt`
+- 🧼 Clears old data before each run
 
 Works on Kali Linux, Parrot, Ubuntu, WSL, etc.
 
 
-💻 How to Use
 
-git clone  https://github.com/Cyb3rGu4rd14n5-T/wp-extractor_XMD.git
 
-cd wp-extractor
+## 🚀 How to Use
+
+### 📦 Clone the Repository
+
+git clone https://github.com/Cyb3rGu4rd14n5-T/wp-extractor_XMD.git
+
+cd wp-extractor_XMD
 
 chmod +x wp-extractor.sh
 
+▶️ Run the Tool
+
 ./wp-extractor.sh
 
+💡 Example
 
-📌 Example Input:
+Enter WordPress site URL (e.g. https://example.com/blog/): https://example.com/blog/
 
-Enter WordPress site URL: https://example.com/blog/
+[*] Scanning https://example.com/wp-json for exposed API data...
+[+] Extracted 3 emails, 5 usernames, and 10 post titles.
 
-The tool auto-corrects this to scan https://example.com/wp-json.
+🗂️ Output
+emails.txt → Extracted emails
+
+usernames.txt → WordPress usernames
+
+post_titles.txt → Titles of public blog posts
 
 ⚠️ Disclaimer
 This tool is for educational and authorized testing only.
