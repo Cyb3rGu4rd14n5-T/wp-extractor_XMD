@@ -104,9 +104,12 @@ chmod +x wp-extractor_XMD.sh
 
 💡 Example
 
-Enter WordPress site URL (e.g. https://example.com/blog/): https://example.com/blog/
+Enter WordPress site URL (e.g. https://example.com/blog/)
 
 [*] Scanning https://example.com/wp-json for exposed API data...
+
+
+
 [+] Extracted 3 emails, 5 usernames, and 10 post titles.
 
 🗂️ Output
