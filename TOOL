@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# cyberguardians-T WP Extractor 🔱
+# Bash tool to extract emails, usernames, and post titles from exposed WordPress REST APIs.
+
+clear
+echo -e "\e[1;36m"
+echo "╔═══════════════════════════════════════╗"
+echo "║   🔱 cyberguardians-T - WP Extractor  ║"
+echo "╚═══════════════════════════════════════╝"
+echo -e "\e[0m"
+
+read -p "Enter WordPress site URL (e.g. https://example.com or with path): " input
+base_url=$(echo "$input" | sed -E 's#(https?://[^/]+).*#\1#')
+
+echo -e "\n[*] Scanning $base_url/wp-json for exposed API data..."
+
+# Clear old data
+> emails.txt
+> usernames.txt
+> post_titles.txt
+
+# ========== Users ==========
+echo "[+] Checking /wp/v2/users for exposed emails..."
+users_json=$(curl -s "$base_url/wp-json/wp/v2/users")
+echo "$users_json" | jq -r '.[].name' 2>/dev/null >> usernames.txt
+echo "$users_json" | grep -E -o "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" >> emails.txt
+
+# ========== Posts ==========
+echo "[+] Checking /wp/v2/posts for post titles..."
+curl -s "$base_url/wp-json/wp/v2/posts" | jq -r '.[].title.rendered' 2>/dev/null >> post_titles.txt
+
+# ========== Output ==========
+echo -e "\n✅ Extraction complete!"
+echo "📁 usernames.txt  → $(wc -l < usernames.txt) usernames"
+echo "📁 emails.txt     → $(wc -l < emails.txt) emails"
+echo "📁 post_titles.txt→ $(wc -l < post_titles.txt) titles"
