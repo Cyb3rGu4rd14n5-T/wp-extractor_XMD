@@ -53,7 +53,7 @@ chmod +x wp-extractor_XMD.sh
 ▶️ Run the Tool
 
 
-./wp-extractor_XMD.sh
+. /wp-extractor_XMD.sh
 
 💡 Example
 
