@@ -42,11 +42,16 @@ Works on Kali Linux, Parrot, Ubuntu, WSL, etc.
 ### 📦 Clone the Repository
 
 git clone https://github.com/Cyb3rGu4rd14n5-T/wp-extractor_XMD.git
+
+
 cd wp-extractor_XMD
+
+
 chmod +x wp-extractor_XMD.sh
 
 
 ▶️ Run the Tool
+
 
 ./wp-extractor_XMD.sh
 
