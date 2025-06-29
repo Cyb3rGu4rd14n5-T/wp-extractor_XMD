@@ -50,7 +50,9 @@ Saves:
 
 All API endpoints → endpoints.txt
 
-Emails, usernames, titles → as before
+usernames.txt → WordPress usernames
+
+post_titles.txt → Titles of public blog posts
 
 Adds a banner check for figlet
 
