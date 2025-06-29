@@ -33,17 +33,12 @@ Works on Kali Linux, Parrot, Ubuntu, WSL, etc.
 
 
 💻 How to Use
-bash
-Copy
-Edit
 git clone https://github.com/YOUR_USERNAME/wp-extractor.git
 cd wp-extractor
 chmod +x wp-extractor.sh
 ./wp-extractor.sh
+
 📌 Example Input:
-bash
-Copy
-Edit
 Enter WordPress site URL: https://example.com/blog/
 The tool auto-corrects this to scan https://example.com/wp-json.
 
