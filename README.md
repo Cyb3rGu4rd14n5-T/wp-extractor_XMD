@@ -32,6 +32,32 @@ Clears old output each time for clean results.
 - 💾 Saves to `usernames.txt`, `emails.txt`, `post_titles.txt`
 - 🧼 Clears old data before each run
 
+## 🔍 What This Tool Actually Does
+
+`wp-extractor_XMD` is a targeted reconnaissance tool that scans a WordPress site’s **REST API** to detect **potential misconfigurations**. Specifically, it accesses API endpoints like:
+
+* `/wp-json/wp/v2/users`
+* `/wp-json/wp/v2/posts`
+
+These endpoints, when misconfigured or left unrestricted, may unintentionally leak:
+
+* 📧 **Email addresses** (including internal/admin emails)
+* 👤 **Usernames** (useful for login enumeration or password reset attacks)
+* 📰 **Post titles** (to fingerprint blog or CMS behavior)
+
+### ⚠️ Why This Matters
+
+Many WordPress sites unknowingly expose sensitive user metadata through their public API. Your tool helps identify:
+
+* Sites with poor REST API hardening
+* Potential attack surfaces like:
+
+  * Phishing via exposed emails
+  * User enumeration
+  * Role discovery
+  * Password reset vectors
+
+
 Works on Kali Linux, Parrot, Ubuntu, WSL, etc.
 
 
