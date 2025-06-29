@@ -1,6 +1,5 @@
 # wp-extractor_XMD
-🔱 Tool Description for GitHub
-wp-extractor.sh — by cyberguardians-T
+🔱 wp-extractor.sh — by cyberguardians-T
 A lightweight bash-based WordPress reconnaissance tool designed for bug bounty hunters and security researchers.
 
 It scans a WordPress site’s exposed REST API (/wp-json) to extract:
